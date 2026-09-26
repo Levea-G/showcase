@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高明源 - 个人展示</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 顶部导航栏 -->
+  <header class="site-header" id="site-header">
+    <a href="#about" class="header-brand">
+      <span class="brand-name">高明源</span>
+      <span class="brand-en">Allen</span>
+    </a>
+    <nav class="header-nav">
+      <a href="#about" class="nav-link" data-section="about">关于</a>
+      <a href="#education" class="nav-link" data-section="education">教育</a>
+      <a href="#experience" class="nav-link" data-section="experience">经历</a>
+      <a href="#projects" class="nav-link" data-section="projects">项目</a>
+      <a href="#skills" class="nav-link" data-section="skills">技能</a>
+      <a href="#contact" class="nav-link" data-section="contact">联系</a>
+    </nav>
+  </header>
+
+  <!-- 封面主体 -->
+  <section class="cover" id="cover">
+    <canvas id="cover-canvas"></canvas>
+
+    <!-- 头像 -->
+    <div class="avatar-wrapper">
+      <img src="assets/imgs/head.png" alt="头像" class="avatar">
+    </div>
+
+    <!-- 中英文名 -->
+    <div class="name-wrapper">
+      <div class="name-cn">高明源</div>
+      <div class="name-en">Allen</div>
+    </div>
+
+    <!-- 标签：散落分布在头像四周 -->
+    <div class="tags">
+      <span class="tag tag-1">VEX 机器人比赛世界冠军</span>
+      <span class="tag tag-2">Python · C/C++ · SQL</span>
+      <span class="tag tag-3">计算机 + 金融</span>
+      <span class="tag tag-4">雅思 7.5</span>
+    </div>
+
+    <!-- 底部点击区域：页面底部1/5 -->
+    <div class="bottom-click-zone" id="bottom-click-zone">
+      <div class="enter-text">点击进入</div>
+      <div class="fish-bone">
+        <svg class="fish-arrow" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="2,2 10,10 18,2"/>
+        </svg>
+        <svg class="fish-arrow" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="2,2 10,10 18,2"/>
+        </svg>
+        <svg class="fish-arrow" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="2,2 10,10 18,2"/>
+        </svg>
+        <svg class="fish-arrow" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="2,2 10,10 18,2"/>
+        </svg>
+      </div>
+      <div class="fish-spacer"></div>
+    </div>
+
+  </section>
+
+  <!-- 主页主体 -->
+  <main class="main-content" id="main-content">
+    <canvas id="main-canvas"></canvas>
+
+    <!-- ==================== 关于我 ==================== -->
+    <section class="section" id="about">
+
+      <!-- 标题 -->
+      <div class="section-title">
+        <span class="section-no">01</span>
+        <span class="section-name">关于</span>
+      </div>
+
+      <!-- 头部名片区：头像左 + slogan右，下方标签 -->
+      <div class="about-header">
+        <!-- 左侧：头像 + 名字 + 学历 -->
+        <div class="about-left">
+          <div class="about-avatar-wrap">
+            <img src="assets/imgs/head.png" alt="头像" class="about-avatar">
+          </div>
+          <div class="about-name-block">
+            <div class="about-name-cn">高明源</div>
+            <div class="about-name-en">Allen</div>
+            <div class="about-title">计算机科学与技术 · 金融学双学位 · 本科</div>
+          </div>
+
+          <!-- 兴趣爱好 -->
+          <div class="about-interests">
+            <span class="about-interest" data-tip="逻辑谜题爱好者">逻辑思维</span>
+            <span class="about-interest" data-tip="QUERN-Undying Thought">解谜游戏</span>
+            <span class="about-interest" data-tip="《Agatha Christie's Poirot》; 《容疑者Xの献身》">侦探小说</span>
+            <span class="about-interest" data-tip="音乐剧 starmania; Piano Sonata No.14 In C Sharp Minor, Op.27 No.2 -'Moonlight'">古典乐</span>
+            <span class="about-interest" data-tip="Sakura Iro No Yume ">柔和流行乐</span>
+          </div>
+        </div>
+
+        <!-- 右侧：slogan + 标签 -->
+        <div class="about-right">
+          <div class="about-slogan">
+            每一个正确的逻辑，都指向一个答案。
+          </div>
+
+          <!-- 结构化标签：一行一个 -->
+          <div class="about-roles">
+            <div class="role-row">
+              <span class="role-key">📌 定位</span>
+              <span class="role-val">Web开发学习者 · AI应用探索者</span>
+            </div>
+            <div class="role-row">
+              <span class="role-key">💻 技术</span>
+              <span class="role-val">Python · C · SQL · Flask · HTML/CSS/JS · 洛谷算法训练</span>
+            </div>
+            <div class="role-row">
+              <span class="role-key">🌐 语言</span>
+              <span class="role-val">雅思 7.5 · 英语六级 560 · 以及其他若干语言</span>
+            </div>
+            <div class="role-row">
+              <span class="role-key">📍 现居</span>
+              <span class="role-val">上海</span>
+            </div>
+            <a href="#contact" class="about-contact-link">联系我 →</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== 教育背景 ==================== -->
+    <section class="section" id="education">
+      <div class="section-title">
+        <span class="section-no">02</span>
+        <span class="section-name">教育</span>
+      </div>
+      <div class="edu-main">华东理工大学 · 计算机科学与技术 + 金融学（双学位）· 本科</div>
+
+      <!-- 核心课程（混合陈列，hover同类高亮） -->
+      <div class="edu-core">
+        <div class="edu-core-label">核心课程</div>
+        <div class="edu-tags edu-core-tags">
+          <span class="edu-tag" data-category="cs">离散数学</span>
+          <span class="edu-tag" data-category="cs">计算机组成原理</span>
+          <span class="edu-tag" data-category="cs">算法设计与分析</span>
+          <span class="edu-tag" data-category="cs">线性代数</span>
+          <span class="edu-tag" data-category="cs">Python程序设计</span>
+          <span class="edu-tag" data-category="fin">金融软件项目管理</span>
+          <span class="edu-tag" data-category="fin">金融数据挖掘实践</span>
+          <span class="edu-tag" data-category="fin">证券投资学</span>
+        </div>
+      </div>
+
+      <div class="edu-stats">
+        <div class="edu-stat">
+          <span class="edu-stat-num">18+</span>
+          <span class="edu-stat-label">门计算机课程</span>
+        </div>
+        <div class="edu-stat">
+          <span class="edu-stat-num">14+</span>
+          <span class="edu-stat-label">门金融课程</span>
+        </div>
+        <div class="edu-stat">
+          <span class="edu-stat-num">7+</span>
+          <span class="edu-stat-label">门交叉课程</span>
+        </div>
+        <div class="edu-stat">
+          <span class="edu-stat-num">3+</span>
+          <span class="edu-stat-label">个在校项目</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 经历 ==================== -->
+    <section class="section" id="experience">
+      <div class="section-title">
+        <span class="section-no">03</span>
+        <span class="section-name">经历</span>
+      </div>
+
+      <!-- 时间轴 -->
+      <div class="exp-timeline">
+        <div class="timeline-track"></div>
+        <button class="timeline-node" data-exp="yinhang" data-year-start="2025.10" data-year-end="目前"></button>
+        <button class="timeline-node" data-exp="zhulong" data-year-start="2023.2" data-year-end="2023.6"></button>
+        <button class="timeline-node active" data-exp="vex" data-year-start="2015" data-year-end="2017"></button>
+      </div>
+
+      <!-- 经历内容面板 -->
+      <div class="exp-panels">
+        <div class="exp-panel" data-panel="yinhang">
+          <div class="exp-panel-role">音行三界文化传媒 · AI模型数据标注实习生</div>
+          <ul class="exp-panel-list">
+            <li>根据AI模型训练要求做数据标注等基础工作</li>
+            <li>参与软件开发工作，学习vibe coding方法</li>
+          </ul>
+          <div class="exp-panel-tags">
+            <span class="exp-tag">数据标注</span>
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">C/C++</span>
+            <span class="exp-tag">vibe coding</span>
+            <span class="exp-tag">AI基础</span>
+          </div>
+        </div>
+
+        <div class="exp-panel" data-panel="zhulong">
+          <div class="exp-panel-role">烛龙信息科技 · QA测试实习生</div>
+          <ul class="exp-panel-list">
+            <li>参与项目：心渊梦境</li>
+            <li>对游戏开发提供测试支持，编写测试报告和记录文档</li>
+            <li>组织组内讨论，商讨并给出优化方案</li>
+            <li>主动参与测试工具的Lua代码编写，成功提高了测试效率</li>
+          </ul>
+          <div class="exp-panel-tags">
+            <span class="exp-tag">Lua</span>
+            <span class="exp-tag">C++</span>
+            <span class="exp-tag">QA</span>
+            <span class="exp-tag">游戏测试</span>
+            <span class="exp-tag">测试报告</span>
+          </div>
+        </div>
+
+        <div class="exp-panel active" data-panel="vex">
+          <div class="exp-panel-role">VEX机器人大赛</div>
+          <ul class="exp-panel-list">
+            <li>队伍编号：8193 & 8192</li>
+            <li>根据每年更新的比赛规则参与设计和搭建机器人，通过编程和遥控操控机器人，和来自世界各地的参赛者合作对抗</li>
+            <li>曾获得两次全国比赛冠军（2016，2017）和一次世界比赛冠军（2015）</li>
+          </ul>
+          <div class="exp-panel-links">
+            <a href="https://www.youtube.com/watch?v=Gjxz9dSxlhQ" target="_blank" class="exp-link">比赛视频 ↗</a>
+          </div>
+          <div class="exp-panel-tags">
+            <span class="exp-tag">简单编程</span>
+            <span class="exp-tag">操控与战术设计</span>
+            <span class="exp-tag">机械结构设计与维护</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 项目 ==================== -->
+    <section class="section" id="projects">
+      <div class="section-title">
+        <span class="section-no">04</span>
+        <span class="section-name">项目</span>
+      </div>
+
+      <div class="project-list">
+        <!-- Windowed Translator - OCR翻译工具 -->
+        <div class="project-item" data-project="windowed_translator">
+          <div class="project-header">
+            <span class="project-time">2025</span>
+            <span class="project-name">Windowed Translator</span>
+          </div>
+          <div class="project-desc">截图 OCR + 多引擎翻译工具，支持 DeepL/百度/ChatGPT</div>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">OCR</span>
+            <span class="project-tag">AI翻译</span>
+          </div>
+        </div>
+
+        <!-- GoBang - 在线五子棋 -->
+        <div class="project-item" data-project="gobang">
+          <div class="project-header">
+            <span class="project-time">2024</span>
+            <span class="project-name">GoBang</span>
+          </div>
+          <div class="project-desc">Pygame 五子棋游戏，支持单人/本地双人/在线对战</div>
+          <div class="project-tags">
+            <span class="project-tag">Pygame</span>
+            <span class="project-tag">在线对战</span>
+            <span class="project-tag">UDP</span>
+          </div>
+        </div>
+
+        <!-- Inotia4 - 逆向工程 -->
+        <div class="project-item" data-project="inotia4">
+          <div class="project-header">
+            <span class="project-time">2025</span>
+            <span class="project-name">Lib Reverse Analysis</span>
+          </div>
+          <div class="project-desc">手游存档文件逆向分析，还原加密算法，解析数据结构</div>
+          <div class="project-tags">
+            <span class="project-tag">逆向工程</span>
+            <span class="project-tag">Ghidra</span>
+            <span class="project-tag">C/C++</span>
+            <span class="project-tag">汇编</span>
+          </div>
+        </div>
+
+        <!-- Custom STL Container Library -->
+        <div class="project-item" data-project="custom_stl">
+          <div class="project-header">
+            <span class="project-time">2024</span>
+            <span class="project-name">Custom STL Container</span>
+          </div>
+          <div class="project-desc">C++ 手写红黑树、vector、hashset，内存池优化，某些场景比 STL 快数倍</div>
+          <div class="project-tags">
+            <span class="project-tag">C/C++</span>
+            <span class="project-tag">数据结构</span>
+            <span class="project-tag">内存优化</span>
+          </div>
+        </div>
+
+        <!-- socket - 聊天室 -->
+        <div class="project-item" data-project="socket">
+          <div class="project-header">
+            <span class="project-time">2023</span>
+            <span class="project-name">Socket Chat</span>
+          </div>
+          <div class="project-desc">IPv6 TCP 聊天室，支持公聊/私聊/文件传输</div>
+          <div class="project-tags">
+            <span class="project-tag">TCP</span>
+            <span class="project-tag">文件传输</span>
+            <span class="project-tag">tkinter</span>
+          </div>
+        </div>
+
+        <!-- 在校项目：predict - 房价预测 -->
+        <div class="project-item school-project" data-project="predict">
+          <div class="project-header">
+            <span class="project-time">2024 · 课程项目</span>
+            <span class="project-name">房价预测系统</span>
+          </div>
+          <div class="project-desc">Flask Web 应用 + 机器学习模型，实现房价预测与回测</div>
+          <div class="project-tags">
+            <span class="project-tag">Flask</span>
+            <span class="project-tag">ML</span>
+            <span class="project-tag">金融</span>
+          </div>
+        </div>
+
+        <!-- 在校项目：stockview - 股票模拟 -->
+        <div class="project-item school-project" data-project="stockview">
+          <div class="project-header">
+            <span class="project-time">2024 · 课程项目</span>
+            <span class="project-name">股票模拟交易</span>
+          </div>
+          <div class="project-desc">UDP IPv6 股票交易模拟系统，多页面 GUI 行情+交易</div>
+          <div class="project-tags">
+            <span class="project-tag">tkinter</span>
+            <span class="project-tag">UDP</span>
+            <span class="project-tag">金融</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal 弹窗 -->
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal-content" id="modal-content">
+        <button class="modal-close" id="modal-close">✕</button>
+        <div class="modal-header">
+          <span class="modal-time" id="modal-time"></span>
+          <h2 class="modal-title" id="modal-title"></h2>
+        </div>
+        <div class="modal-desc" id="modal-desc"></div>
+        <div class="modal-tags" id="modal-tags"></div>
+        <div class="modal-details" id="modal-details"></div>
+      </div>
+    </div>
+
+    <!-- ==================== 技能 ==================== -->
+    <section class="section" id="skills">
+      <div class="section-title">
+        <span class="section-no">05</span>
+        <span class="section-name">技能</span>
+      </div>
+
+      <div class="skills-grid">
+        <!-- 编程语言 - 突出显示 -->
+        <div class="skill-card skill-card-highlight">
+          <div class="skill-card-label">编程语言</div>
+          <div class="skill-card-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-bar-name">Python</span>
+                <span class="skill-bar-level">熟练</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 90%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-bar-name">C / C++</span>
+                <span class="skill-bar-level">熟练</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 85%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-header">
+                <span class="skill-bar-name">SQL</span>
+                <span class="skill-bar-level">掌握</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 75%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 框架 / 工具 -->
+        <div class="skill-card">
+          <div class="skill-card-label">框架 / 工具</div>
+          <div class="skill-card-tags">
+            <span class="skill-tag">Flask</span>
+            <span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag">SDL2</span>
+            <span class="skill-tag">Ghidra</span>
+          </div>
+        </div>
+
+        <!-- 多语言能力 -->
+        <div class="skill-card">
+          <div class="skill-card-label">多语言能力</div>
+          <div class="skill-card-tags">
+            <span class="skill-tag">雅思 7.5</span>
+            <span class="skill-tag">英语六级 560</span>
+          </div>
+        </div>
+
+        <!-- AI 能力 -->
+        <div class="skill-card">
+          <div class="skill-card-label">AI 能力</div>
+          <div class="skill-card-tags">
+            <span class="skill-tag">Agent 协作</span>
+            <span class="skill-tag">OCR 识别</span>
+            <span class="skill-tag">机器学习预测</span>
+          </div>
+        </div>
+
+        <!-- 其他能力 -->
+        <div class="skill-card">
+          <div class="skill-card-label">其他能力</div>
+          <div class="skill-card-tags">
+            <span class="skill-tag">金融软件</span>
+            <span class="skill-tag">逆向工程</span>
+            <span class="skill-tag">vibe coding</span>
+            <a href="https://www.luogu.com.cn/user/430436" target="_blank" class="skill-tag skill-tag-link">算法 ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 联系 ==================== -->
+    <section class="section" id="contact">
+      <div class="section-title">
+        <span class="section-no">06</span>
+        <span class="section-name">联系</span>
+      </div>
+      <div class="contact-subtitle">欢迎通过以下方式与我取得联系</div>
+      <div class="contact-list">
+        <div class="contact-card">
+          <span class="contact-icon">📱</span>
+          <span class="contact-label">电话</span>
+          <span class="contact-value">18939939617</span>
+        </div>
+        <div class="contact-card">
+          <span class="contact-icon">📧</span>
+          <span class="contact-label">邮箱</span>
+          <span class="contact-value">1499369897@qq.com</span>
+        </div>
+        <a href="https://github.com/Levea-G" target="_blank" class="contact-card contact-card-link">
+          <span class="contact-icon">💻</span>
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">github.com/Levea-G</span>
+          <span class="contact-arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 底部栏 -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <span class="footer-text">高明源 · 个人展示</span>
+        <span class="footer-divider">|</span>
+        <span class="footer-text">感谢访问</span>
+      </div>
+    </footer>
+  </main>
+
+    <!-- 右侧导航索引 -->
+  <nav class="nav-index" id="nav-index">
+    <div class="nav-slider">
+      <div class="nav-handle" id="nav-handle">
+        <span class="nav-handle-text">≡</span>
+      </div>
+      <div class="nav-list">
+        <a href="#about" class="nav-item active" data-section="about">
+          <span class="nav-no">01</span>
+          <span class="nav-label">关于</span>
+        </a>
+        <a href="#education" class="nav-item" data-section="education">
+          <span class="nav-no">02</span>
+          <span class="nav-label">教育</span>
+        </a>
+        <a href="#experience" class="nav-item" data-section="experience">
+          <span class="nav-no">03</span>
+          <span class="nav-label">经历</span>
+        </a>
+        <a href="#projects" class="nav-item" data-section="projects">
+          <span class="nav-no">04</span>
+          <span class="nav-label">项目</span>
+        </a>
+        <a href="#skills" class="nav-item" data-section="skills">
+          <span class="nav-no">05</span>
+          <span class="nav-label">技能</span>
+        </a>
+        <a href="#contact" class="nav-item" data-section="contact">
+          <span class="nav-no">06</span>
+          <span class="nav-label">联系</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
