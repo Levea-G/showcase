@@ -252,19 +252,32 @@
   });
 
   function updateActiveNav() {
+    var scrollY = window.scrollY;
+    var headerOffset = 56 + 40; // 导航高度 + 余量
+
     var closest = null;
     var closestDist = Infinity;
+
     sections.forEach(function(id) {
       var el = document.getElementById(id);
       if (!el) return;
-      var rect = el.getBoundingClientRect();
-      // 取 section 顶部距视口顶部的距离，越小越"靠前"
-      var dist = Math.abs(rect.top);
-      if (dist < closestDist) {
+      var top = el.offsetTop;
+      var height = el.offsetHeight;
+      // 计算section顶部在当前视口的位置，越接近0越靠前
+      var dist = top - scrollY - headerOffset;
+
+      // section在当前视口下方或附近
+      if (dist >= 0 && dist < closestDist) {
         closestDist = dist;
         closest = id;
       }
     });
+
+    // 如果没有找到（滚动到底部），使用最后一个section
+    if (!closest && sections.length > 0) {
+      closest = sections[sections.length - 1];
+    }
+
     // 更新侧边导航
     navItems.forEach(function(item) { item.classList.remove('active'); });
     if (closest && navItemMap[closest]) navItemMap[closest].classList.add('active');
@@ -571,5 +584,73 @@
       eduTags.forEach(function(t) { t.classList.remove('highlight'); });
     });
   });
+
+  // ==================== 滚动揭示动画 ====================
+  function initReveal() {
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          // 技能条动画：设置目标宽度
+          var skillBars = entry.target.querySelectorAll('.skill-bar-fill[data-width]');
+          skillBars.forEach(function(bar) {
+            bar.style.width = bar.dataset.width + '%';
+          });
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -60px 0px'
+    });
+
+    // 观察所有 .reveal 元素
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      revealObserver.observe(el);
+    });
+
+    return revealObserver;
+  }
+
+  // ==================== 数字滚动动画 ====================
+  function initCountUp() {
+    var stats = document.querySelectorAll('[data-count]');
+    if (!stats.length) return;
+
+    var countObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseFloat(el.dataset.count);
+        var decimals = parseInt(el.dataset.decimals || '0', 10);
+        var suffix = el.dataset.suffix || '';
+        var dur = 1400;
+        var start = performance.now();
+
+        function step(now) {
+          var t = Math.min(1, (now - start) / dur);
+          // 缓动函数：ease-out cubic
+          var eased = 1 - Math.pow(1 - t, 3);
+          var v = target * eased;
+          el.innerHTML = v.toFixed(decimals) + suffix + (el.querySelector('small') ? el.querySelector('small').outerHTML : '');
+          if (t < 1) {
+            requestAnimationFrame(step);
+          } else {
+            el.innerHTML = target.toFixed(decimals) + suffix + (el.querySelector('small') ? el.querySelector('small').outerHTML : '');
+          }
+        }
+        requestAnimationFrame(step);
+        countObserver.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+
+    stats.forEach(function(stat) {
+      countObserver.observe(stat);
+    });
+  }
+
+  // ==================== 初始化 ====================
+  initReveal();
+  initCountUp();
 
 })();

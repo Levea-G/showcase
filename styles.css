@@ -3,9 +3,33 @@
    ======================================== */
 
 :root {
+  /* 配色 */
+  --bg: #0f0820;
   --bg-color: #0a0a0a;
+  --bg-2: #160d20;
+  --surface: #1a0f2e;
   --text-color: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.6);
   --accent-color: #00d9ff;
+  --accent-2: #9e59ee;
+  --orange: #ff6b35;
+
+  /* 字体 */
+  --font-display: 'Fraunces', 'Noto Serif SC', 'Songti SC', Georgia, serif;
+  --font-sans: 'DM Sans', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  --font-cn: 'ZCOOL XiaoWei', 'Noto Serif SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+
+  /* 字号阶梯 */
+  --fs-h1: clamp(28px, 4vw, 44px);
+  --fs-h2: clamp(24px, 3.5vw, 36px);
+  --fs-h3: clamp(20px, 2.5vw, 28px);
+  --fs-body: 15px;
+  --fs-small: 13px;
+
+  /* 过渡 */
+  --t-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --t-med: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -17,10 +41,20 @@
 }
 
 body {
-  font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: var(--font-cn);
+  font-size: 16px;
+  line-height: 1.75;
   background-color: var(--bg-color);
   color: var(--text-color);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.015em;
 }
 
 /* ========================================
@@ -338,7 +372,7 @@ body:not(.cover-mode) {
   z-index: 3;
   min-height: 100vh;
   padding: 80px 20px 80px;
-  background: linear-gradient(135deg, #0f0f22 0%, #131020 30%, #0d0c1a 60%, #0a0a18 100%);
+  background: linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 50%, var(--bg-color) 100%);
 }
 
 /* 让第一个 section 不被顶部导航栏挡住 */
@@ -498,16 +532,15 @@ body:not(.cover-mode) {
 
 /* Slogan - 艺术字样式 */
 .about-slogan {
-  font-size: clamp(22px, 3vw, 32px);
+  font-size: var(--fs-h2);
   font-weight: 800;
   line-height: 1.3;
   letter-spacing: 1px;
-  font-family: 'Georgia', 'Book Antiqua', 'Century Schoolbook', serif;
+  font-family: var(--font-display);
   padding: 24px 32px;
   border-left: 4px solid var(--accent-color);
-  background: rgba(0, 217, 255, 0.05);
   /* 渐变色文字效果 */
-  background: linear-gradient(135deg, var(--accent-color), #a78bfa);
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-2));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -611,12 +644,12 @@ body:not(.cover-mode) {
 .section-no {
   font-size: 14px;
   color: var(--accent-color);
-  font-family: 'Consolas', 'Courier New', monospace;
+  font-family: var(--font-mono);
   letter-spacing: 2px;
 }
 
 .section-name {
-  font-size: 22px;
+  font-size: var(--fs-h2);
   font-weight: 600;
   color: var(--text-color);
   letter-spacing: 2px;
@@ -1065,7 +1098,7 @@ body:not(.cover-mode) {
 
 .exp-link {
   font-size: 13px;
-  color: #a78bfa;
+  color: var(--accent-color);
   text-decoration: none;
   letter-spacing: 0.5px;
   transition: color 0.2s;
@@ -1626,4 +1659,170 @@ body:not(.cover-mode) {
     width: 22px;
     height: 16px;
   }
+}
+
+/* ========================================
+   滚动揭示动画（Scroll Reveal）
+   ======================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal[data-delay="1"] { transition-delay: 0.1s; }
+.reveal[data-delay="2"] { transition-delay: 0.2s; }
+.reveal[data-delay="3"] { transition-delay: 0.3s; }
+.reveal[data-delay="4"] { transition-delay: 0.4s; }
+.reveal[data-delay="5"] { transition-delay: 0.5s; }
+.reveal[data-delay="6"] { transition-delay: 0.6s; }
+.reveal[data-delay="7"] { transition-delay: 0.7s; }
+.reveal[data-delay="8"] { transition-delay: 0.8s; }
+
+/* 滚动揭示：减少动画 */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ========================================
+   增强 Hover 效果
+   ======================================== */
+
+/* 项目卡片 - 更强hover效果 */
+.project-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 217, 255, 0.15),
+              0 0 0 1px rgba(0, 217, 255, 0.3);
+}
+
+/* 项目卡片hover发光扩散 */
+.project-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.project-item:hover::before {
+  animation: itemGlow 0.6s ease-out;
+}
+
+@keyframes itemGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 217, 255, 0.4);
+    opacity: 1;
+  }
+  100% {
+    box-shadow: 0 0 0 12px rgba(0, 217, 255, 0);
+    opacity: 0;
+  }
+}
+
+/* 联系卡片 - 更强hover效果 */
+.contact-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 217, 255, 0.2),
+              0 0 0 1px rgba(0, 217, 255, 0.3);
+}
+
+/* 联系卡片hover发光 */
+.contact-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.contact-card:hover::after {
+  animation: cardGlow 0.6s ease-out;
+}
+
+@keyframes cardGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 217, 255, 0.4);
+    opacity: 1;
+  }
+  100% {
+    box-shadow: 0 0 0 12px rgba(0, 217, 255, 0);
+    opacity: 0;
+  }
+}
+
+/* 技能卡片 - hover效果 */
+.skill-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 217, 255, 0.12),
+              0 0 0 1px rgba(0, 217, 255, 0.2);
+}
+
+/* 教育标签 - hover效果 */
+.edu-tag {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.edu-tag[data-category="cs"]:hover,
+.edu-tag[data-category="cs"].highlight {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 217, 255, 0.25);
+}
+
+.edu-tag[data-category="fin"]:hover,
+.edu-tag[data-category="fin"].highlight {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(167, 139, 250, 0.25);
+}
+
+/* ========================================
+   技能进度条动画
+   ======================================== */
+.skill-bar-fill {
+  width: 0;
+  transition: width 0s;
+}
+
+.reveal.is-visible .skill-bar-fill {
+  transition: width 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* 技能条刻度背景 */
+.skill-bar-track {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0 calc(25% - 1px),
+    rgba(255, 255, 255, 0.08) calc(25% - 1px) 25%
+  );
+}
+
+/* ========================================
+   数字滚动动画（用于统计数字）
+   ======================================== */
+.stat-number {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
 }

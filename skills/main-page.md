@@ -193,13 +193,88 @@ suggest/
 
 ---
 
+## 7. 已实现功能（2026-09-27）
+
+### 7.1 CSS 变量系统
+
+**Google Fonts 引入**：
+- `DM Sans` / `Fraunces` / `JetBrains Mono` / `Noto Sans SC` / `Noto Serif SC` / `ZCOOL XiaoWei`
+
+**CSS 变量**：
+```css
+:root {
+  /* 配色 */
+  --bg: #0f0820;
+  --bg-color: #0a0a0a;
+  --bg-2: #160d20;
+  --accent-color: #00d9ff;
+  --accent-2: #9e59ee;
+  --orange: #ff6b35;
+
+  /* 字体 */
+  --font-display: 'Fraunces', 'Noto Serif SC', Georgia, serif;
+  --font-sans: 'DM Sans', 'Noto Sans SC', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-cn: 'ZCOOL XiaoWei', 'Noto Serif SC', sans-serif;
+
+  /* 字号阶梯 */
+  --fs-h1: clamp(28px, 4vw, 44px);
+  --fs-h2: clamp(24px, 3.5vw, 36px);
+  --fs-h3: clamp(20px, 2.5vw, 28px);
+  --fs-body: 15px;
+  --fs-small: 13px;
+}
+```
+
+### 7.2 滚动揭示动画
+
+IntersectionObserver 滚动揭示 + data-delay 错峰：
+```css
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s, transform 0.8s;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal[data-delay="1"] { transition-delay: 0.1s; }
+/* ... */
+```
+
+### 7.3 交互细节优化
+
+- 项目/联系卡片 hover：`translateY(-6px)` + 发光 box-shadow 扩散动画
+- 技能卡片 hover：`translateY(-4px)` + 边框发光
+- 教育标签 hover：`translateY(-3px)` + 阴影增强
+- 技能条入场动画：`.reveal.is-visible` 时宽度从 0 动画展开
+
+### 7.4 导航 active 状态检测（修复）
+
+改用 scrollY 精确计算，替代 rect.top 绝对值方案：
+```javascript
+var scrollY = window.scrollY;
+var headerOffset = 56 + 40; // 导航高度 + 余量
+// 遍历 sections，找到 scrollY 在范围内的 section
+```
+
+### 7.5 数字滚动动画
+
+```javascript
+// IntersectionObserver 触发 countUp
+// ease-out cubic 缓动，1400ms 动画时长
+```
+
+---
+
 ## 8. 待完成事项
 
 | 项目 | 状态 | 说明 |
 |------|------|------|
-| 粒子分布均匀性 | 待优化 | 博客园效果中粒子在鼠标周围分布较自然，目前偶有不均匀 |
-| 右侧导航 contact 项点击范围 | 待修复 | 列表展开时鼠标移到下方 item 会超出 hover 区域导致收回 |
-| "对自己的定义" 一句话 | 待用户补充 | About section 正文内容 |
+| 粒子分布均匀性 | 待优化 | 粒子在鼠标周围分布优化 |
+| 右侧导航 contact 项 hover 区域 | 待修复 | 列表展开时鼠标移到下方 item 会超出 hover 区域 |
 | VEX 视频链接 | 待挖掘 | 展柜/照片墙区域 |
-| 滚动揭示动画 | 待实现 | 各区块滑入 + 淡入效果 |
-| 粒子密度调整 | 可选 | 主页粒子密度可略低于封面 |
+| 角落装饰符号 | 可选 | ⚡ { } </> Σ ∞ ∂ |
+| 飘浮代码碎片 | 可选 | .cosmic-field |
+| 右侧导航重构 | 可选 | 圆钮 + 进度环 + 展开面板 |

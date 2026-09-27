@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Showcase</title>
+  <title>showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700;800&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -77,13 +80,13 @@
     <section class="section" id="about">
 
       <!-- 标题 -->
-      <div class="section-title">
+      <div class="section-title reveal">
         <span class="section-no">01</span>
         <span class="section-name">关于</span>
       </div>
 
       <!-- 头部名片区：头像左 + slogan右，下方标签 -->
-      <div class="about-header">
+      <div class="about-header reveal">
         <!-- 左侧：头像 + 名字 + 学历 -->
         <div class="about-left">
           <div class="about-avatar-wrap">
@@ -138,14 +141,14 @@
 
     <!-- ==================== 教育背景 ==================== -->
     <section class="section" id="education">
-      <div class="section-title">
+      <div class="section-title reveal">
         <span class="section-no">02</span>
         <span class="section-name">教育</span>
       </div>
-      <div class="edu-main">华东理工大学 · 计算机科学与技术 + 金融学（双学位）· 本科</div>
+      <div class="edu-main reveal">华东理工大学 · 计算机科学与技术 + 金融学（双学位）· 本科</div>
 
       <!-- 核心课程（混合陈列，hover同类高亮） -->
-      <div class="edu-core">
+      <div class="edu-core reveal">
         <div class="edu-core-label">核心课程</div>
         <div class="edu-tags edu-core-tags">
           <span class="edu-tag" data-category="cs">离散数学</span>
@@ -177,17 +180,36 @@
           <span class="edu-stat-label">个在校项目</span>
         </div>
       </div>
+
+      <div class="edu-stats reveal">
+        <div class="edu-stat">
+          <span class="edu-stat-num" data-count="18">18<small>+</small></span>
+          <span class="edu-stat-label">门计算机课程</span>
+        </div>
+        <div class="edu-stat">
+          <span class="edu-stat-num" data-count="14">14<small>+</small></span>
+          <span class="edu-stat-label">门金融课程</span>
+        </div>
+        <div class="edu-stat">
+          <span class="edu-stat-num" data-count="7">7<small>+</small></span>
+          <span class="edu-stat-label">门交叉课程</span>
+        </div>
+        <div class="edu-stat">
+          <span class="edu-stat-num" data-count="3">3<small>+</small></span>
+          <span class="edu-stat-label">个在校项目</span>
+        </div>
+      </div>
     </section>
 
     <!-- ==================== 经历 ==================== -->
     <section class="section" id="experience">
-      <div class="section-title">
+      <div class="section-title reveal">
         <span class="section-no">03</span>
         <span class="section-name">经历</span>
       </div>
 
       <!-- 时间轴 -->
-      <div class="exp-timeline">
+      <div class="exp-timeline reveal">
         <div class="timeline-track"></div>
         <button class="timeline-node" data-exp="yinhang" data-year-start="2025.10" data-year-end="目前"></button>
         <button class="timeline-node" data-exp="zhulong" data-year-start="2023.2" data-year-end="2023.6"></button>
@@ -249,14 +271,14 @@
 
     <!-- ==================== 项目 ==================== -->
     <section class="section" id="projects">
-      <div class="section-title">
+      <div class="section-title reveal">
         <span class="section-no">04</span>
         <span class="section-name">项目</span>
       </div>
 
       <div class="project-list">
         <!-- Windowed Translator - OCR翻译工具 -->
-        <div class="project-item" data-project="windowed_translator">
+        <div class="project-item reveal" data-project="windowed_translator">
           <div class="project-header">
             <span class="project-time">2025</span>
             <span class="project-name">Windowed Translator</span>
@@ -270,7 +292,7 @@
         </div>
 
         <!-- GoBang - 在线五子棋 -->
-        <div class="project-item" data-project="gobang">
+        <div class="project-item reveal" data-project="gobang">
           <div class="project-header">
             <span class="project-time">2024</span>
             <span class="project-name">GoBang</span>
@@ -284,7 +306,7 @@
         </div>
 
         <!-- Inotia4 - 逆向工程 -->
-        <div class="project-item" data-project="inotia4">
+        <div class="project-item reveal" data-project="inotia4">
           <div class="project-header">
             <span class="project-time">2025</span>
             <span class="project-name">Lib Reverse Analysis</span>
@@ -299,7 +321,7 @@
         </div>
 
         <!-- Custom STL Container Library -->
-        <div class="project-item" data-project="custom_stl">
+        <div class="project-item reveal" data-project="custom_stl">
           <div class="project-header">
             <span class="project-time">2024</span>
             <span class="project-name">Custom STL Container</span>
@@ -313,7 +335,7 @@
         </div>
 
         <!-- socket - 聊天室 -->
-        <div class="project-item" data-project="socket">
+        <div class="project-item reveal" data-project="socket">
           <div class="project-header">
             <span class="project-time">2023</span>
             <span class="project-name">Socket Chat</span>
@@ -327,7 +349,7 @@
         </div>
 
         <!-- 在校项目：predict - 房价预测 -->
-        <div class="project-item school-project" data-project="predict">
+        <div class="project-item school-project reveal" data-project="predict">
           <div class="project-header">
             <span class="project-time">2024 · 课程项目</span>
             <span class="project-name">房价预测系统</span>
@@ -341,7 +363,7 @@
         </div>
 
         <!-- 在校项目：stockview - 股票模拟 -->
-        <div class="project-item school-project" data-project="stockview">
+        <div class="project-item school-project reveal" data-project="stockview">
           <div class="project-header">
             <span class="project-time">2024 · 课程项目</span>
             <span class="project-name">股票模拟交易</span>
@@ -372,14 +394,14 @@
 
     <!-- ==================== 技能 ==================== -->
     <section class="section" id="skills">
-      <div class="section-title">
+      <div class="section-title reveal">
         <span class="section-no">05</span>
         <span class="section-name">技能</span>
       </div>
 
       <div class="skills-grid">
         <!-- 编程语言 - 突出显示 -->
-        <div class="skill-card skill-card-highlight">
+        <div class="skill-card skill-card-highlight reveal">
           <div class="skill-card-label">编程语言</div>
           <div class="skill-card-bars">
             <div class="skill-bar-item">
@@ -387,27 +409,27 @@
                 <span class="skill-bar-name">Python</span>
                 <span class="skill-bar-level">熟练</span>
               </div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 90%"></div></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90" style="width: 0"></div></div>
             </div>
             <div class="skill-bar-item">
               <div class="skill-bar-header">
                 <span class="skill-bar-name">C / C++</span>
                 <span class="skill-bar-level">熟练</span>
               </div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 85%"></div></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85" style="width: 0"></div></div>
             </div>
             <div class="skill-bar-item">
               <div class="skill-bar-header">
                 <span class="skill-bar-name">SQL</span>
                 <span class="skill-bar-level">掌握</span>
               </div>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 75%"></div></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75" style="width: 0"></div></div>
             </div>
           </div>
         </div>
 
         <!-- 框架 / 工具 -->
-        <div class="skill-card">
+        <div class="skill-card reveal">
           <div class="skill-card-label">框架 / 工具</div>
           <div class="skill-card-tags">
             <span class="skill-tag">Flask</span>
@@ -418,7 +440,7 @@
         </div>
 
         <!-- 多语言能力 -->
-        <div class="skill-card">
+        <div class="skill-card reveal">
           <div class="skill-card-label">多语言能力</div>
           <div class="skill-card-tags">
             <span class="skill-tag">雅思 7.5</span>
@@ -427,7 +449,7 @@
         </div>
 
         <!-- AI 能力 -->
-        <div class="skill-card">
+        <div class="skill-card reveal">
           <div class="skill-card-label">AI 能力</div>
           <div class="skill-card-tags">
             <span class="skill-tag">Agent 协作</span>
@@ -437,7 +459,7 @@
         </div>
 
         <!-- 其他能力 -->
-        <div class="skill-card">
+        <div class="skill-card reveal">
           <div class="skill-card-label">其他能力</div>
           <div class="skill-card-tags">
             <span class="skill-tag">金融软件</span>
@@ -451,23 +473,23 @@
 
     <!-- ==================== 联系 ==================== -->
     <section class="section" id="contact">
-      <div class="section-title">
+      <div class="section-title reveal">
         <span class="section-no">06</span>
         <span class="section-name">联系</span>
       </div>
-      <div class="contact-subtitle">欢迎通过以下方式与我取得联系</div>
+      <div class="contact-subtitle reveal">欢迎通过以下方式与我取得联系</div>
       <div class="contact-list">
-        <div class="contact-card">
+        <div class="contact-card reveal">
           <span class="contact-icon">📱</span>
           <span class="contact-label">电话</span>
           <span class="contact-value">18939939617</span>
         </div>
-        <div class="contact-card">
+        <div class="contact-card reveal">
           <span class="contact-icon">📧</span>
           <span class="contact-label">邮箱</span>
           <span class="contact-value">1499369897@qq.com</span>
         </div>
-        <a href="https://github.com/Levea-G" target="_blank" class="contact-card contact-card-link">
+        <a href="https://github.com/Levea-G" target="_blank" class="contact-card contact-card-link reveal">
           <span class="contact-icon">💻</span>
           <span class="contact-label">GitHub</span>
           <span class="contact-value">github.com/Levea-G</span>
@@ -477,7 +499,7 @@
     </section>
 
     <!-- 底部栏 -->
-    <footer class="site-footer">
+    <footer class="site-footer reveal">
       <div class="footer-content">
         <span class="footer-text">高明源 · 个人展示</span>
         <span class="footer-divider">|</span>
